@@ -2,14 +2,11 @@ import { users } from "../dummyData/data.js";
 
 const userResolver = {
   Query: {
-    users: () => {
+    users: (_, args, { req, res }) => {
       return users;
     },
-    user: (_, { userId }) => {
-      return users.find((user) => user._id === userId);
-    },
+    // Other resolver functions
   },
   Mutation: {},
 };
-
 export default userResolver;
